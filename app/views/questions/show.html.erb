@@ -1,0 +1,6 @@
+<h4><b><%= @question.title %></b></h4>
+<p><%= @question.content %></p>
+
+<%= link_to 'Home', root_path %>
+<%= link_to 'Edit', edit_question_path(@question) %>
+<%= link_to 'Delete', question_path(@question), method: :delete, data: { confirm: "Are you sure you want to do this?"} %>
