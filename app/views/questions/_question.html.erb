@@ -1,2 +1,11 @@
-<%= link_to question.title, question %>
-<br />
+<!-- <%= link_to question.title, question %>
+<br /> -->
+
+<table class="table row">
+  <tbody>
+    <tr>
+      <td class="col-sm-8"><%= link_to question.title, question %></td>
+      <td class="col-sm-4">asked <%= time_ago_in_words(question.created_at) %> ago</td>
+    </tr>
+  </tbody>
+</table>
