@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -8,15 +8,18 @@
         <span class="icon-bar"></span>
       </button>
       <span>
-        <%= image_tag 'echo', :id => "echo", :class => "logo" %>
+        <a href="/"><%= image_tag 'echo', :id => "echo", :class => "logo" %></a>
       </span>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="#">Logout</a></li>
+        <% unless user_signed_in?%>
+        <li><%= link_to "Log In", new_user_session_path %></li>
+        <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-primary", :id => "signup-btn" %>
+        <% else %>
+        <li><%= link_to('Logout', destroy_user_session_path, method: :delete, :id => "logout-btn") %>  </li>
+        <% end %>
       </ul>
       <form class="navbar-form navbar-right">
         <div class="form-group">

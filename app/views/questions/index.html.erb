@@ -1,7 +1,11 @@
 <%= render 'header' %>
 
 <div class="container">
-  <h3>Latest Questions</h3>
+  <div class="row">
+  <h3 class="col-sm-8">Latest Questions</h3>
+  <span class=" col-sm-offset-2 col-sm-2 h3">
+    <%= link_to 'Ask Question', new_question_path, :class => "btn btn-danger" %>
+  </span>
+  </div>
   <%= render @questions.reverse %>
-  <%= link_to 'Ask Question', new_question_path %>
 </div>

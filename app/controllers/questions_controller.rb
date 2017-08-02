@@ -6,11 +6,15 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = Question.new
+    if user_signed_in?
+      @question = current_user.questions.build
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def create
-    @question = Question.new(question_params)
+    @question = current_user.questions.build(question_params)
 
     if @question.save
       redirect_to @question
