@@ -1,16 +1,13 @@
 class QuestionsController < ApplicationController
   before_action :find_question, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @questions = Question.all
   end
 
   def new
-    if user_signed_in?
       @question = current_user.questions.build
-    else
-      redirect_to new_user_session_path
-    end
   end
 
   def create
