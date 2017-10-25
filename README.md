@@ -1,24 +1,22 @@
-# README
+# ECHO
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Developer's community
 
-Things you may want to cover:
+## Technologies
 
-* Ruby version
+- Ruby on Rails
+- Bootstrap
 
-* System dependencies
+## Local Development
 
-* Configuration
+- Install dependencies bundle install
+- To run the app: rails s
 
-* Database creation
+## Contributing
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Fork this repository to your account.
+2. Clone your repository: git clone git@github.com:thecodingpoet/echo.git
+3. Create your feature branch: git checkout -b new-feature
+4. Commit your changes: git commit -m "did something"
+5. Push to the remote branch: git push origin new-feature
+6. Open a pull request.
